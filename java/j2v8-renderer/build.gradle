@@ -1,0 +1,28 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+}
+
+apply plugin: 'java'
+
+jar {
+  baseName = 'j2v8-renderer'
+  version =  '1.0.0'
+}
+
+repositories {
+  mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+  compile("com.eclipsesource.j2v8:j2v8_macosx_x86_64:4.+")
+  compile("com.eclipsesource.j2v8:j2v8_win32_x86_64:4.+")
+  compile("com.eclipsesource.j2v8:j2v8_linux_x86_64:4.+")
+
+  testCompile("junit:junit:4.12")
+}
