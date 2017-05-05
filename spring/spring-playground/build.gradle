@@ -1,0 +1,43 @@
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+jar {
+  baseName = 'spring-boot-j2v8'
+  version =  '1.0.0'
+}
+
+repositories {
+  mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+bootRun {
+  addResources = true
+}
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-devtools")
+  compile("org.springframework.boot:spring-boot-starter-actuator")
+  compile("org.springframework.boot:spring-boot-starter-data-rest")
+
+  compile("com.eclipsesource.j2v8:j2v8_macosx_x86_64:4.+")
+  compile("com.eclipsesource.j2v8:j2v8_win32_x86_64:4.+")
+  compile("com.eclipsesource.j2v8:j2v8_linux_x86_64:4.+")
+
+
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+}
