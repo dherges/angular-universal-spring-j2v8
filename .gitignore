@@ -1,12 +1,21 @@
-*.class
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+.Trashes
+.Spotlight-V100
+._*
 
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.ear
+# Build Artifacts
+build/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# Gradle
+.gradle/
+local.properties
+
+# IntelliJ
+.idea/
+*.iml
